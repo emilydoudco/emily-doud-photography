@@ -1,0 +1,397 @@
+---
+import Page from '../layouts/Page.astro';
+import { CONTACT_URL } from '../config/contact';
+---
+
+<Page
+  title="Emily Doud Photography"
+  description="Editorial, portrait, and lifestyle photography by Emily Rose Doud — warm, botanical, and intentional. Based in Wisconsin."
+>
+
+  <!-- Hero -->
+  <section class="section-padded pb-section-sm">
+    <div class="container-content">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div>
+          <p class="text-label mb-4 reveal">Wisconsin-based Photographer</p>
+          <h1 class="font-display text-display-xl text-brown mb-6 reveal reveal-delay-1">
+            Emily Doud<br />
+            <em class="text-rose-deep not-italic">Photography</em>
+          </h1>
+          <p class="text-body-lg max-w-lg mb-8 reveal reveal-delay-2">
+            Warm, botanical, and intentional. Natural light, honest moments,
+            and images made to last. Portrait, lifestyle, landscape, and beyond.
+          </p>
+          <div class="flex flex-wrap gap-4 reveal reveal-delay-3">
+            <a target="_blank" rel="noopener noreferrer" href={CONTACT_URL} class="btn-primary">
+              Book a Session →
+            </a>
+            <a href="#gallery" class="btn-ghost">
+              View Gallery
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero image -->
+        <div class="reveal reveal-delay-2">
+          <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-card-hover">
+            <img
+              src="/images/photography/cover.jpg"
+              alt="Portrait photography by Emily Doud"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What I Shoot -->
+  <section class="section-padded bg-cream-50 border-y border-cream-200">
+    <div class="container-content">
+      <h2 class="font-display text-display-md text-brown ruled-heading mb-10 reveal">What I Shoot</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+        <div class="reveal reveal-delay-1">
+          <p class="text-label mb-4">Portraits & People</p>
+          <ul class="space-y-4">
+            {[
+              { title: 'Senior portraits',                desc: "Marking the milestone with images that capture your graduate's personality" },
+              { title: 'Individual & personal portraits', desc: 'Updated photos for any purpose or occasion' },
+              { title: 'Family photography',              desc: 'Relaxed, natural sessions that capture your family as it is right now' },
+              { title: 'Couples & engagement sessions',   desc: 'For the moments worth remembering' },
+              { title: 'Maternity & newborn',             desc: 'Gentle sessions documenting a new chapter' },
+              { title: 'Pet photography',                 desc: "Because they're family too" },
+            ].map(item => (
+              <li>
+                <p class="font-serif text-brown">{item.title}</p>
+                <p class="text-body text-sm">{item.desc}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="reveal reveal-delay-2">
+          <p class="text-label mb-4">Professional & Business</p>
+          <ul class="space-y-4">
+            {[
+              { title: 'Professional headshots',       desc: 'Polished, current images for LinkedIn, websites, and bios' },
+              { title: 'Team & group headshots',       desc: 'Consistent, professional photos for your whole staff' },
+              { title: 'Business & brand photography', desc: 'Product, marketing, and storytelling images for your business' },
+              { title: 'Real estate & property',       desc: 'Bright, well-composed listing photos that help properties sell' },
+            ].map(item => (
+              <li>
+                <p class="font-serif text-brown">{item.title}</p>
+                <p class="text-body text-sm">{item.desc}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="reveal reveal-delay-3">
+          <p class="text-label mb-4">Events</p>
+          <ul class="space-y-4">
+            {[
+              { title: 'Private events & celebrations', desc: 'Parties, anniversaries, reunions, and gatherings' },
+              { title: 'Corporate events & conferences', desc: 'Professional coverage of your business events' },
+              { title: 'Graduation & school events',    desc: 'Capturing the day for students and families' },
+            ].map(item => (
+              <li>
+                <p class="font-serif text-brown">{item.title}</p>
+                <p class="text-body text-sm">{item.desc}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery: Portraits -->
+  <section id="gallery" class="section-padded">
+    <div class="container-content">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div>
+          <div class="flex flex-wrap gap-2 mb-8 reveal">
+            <span class="tag-sage">Portrait</span>
+            <span class="tag-sage">Editorial</span>
+            <span class="tag-sage">Lifestyle</span>
+            <span class="tag-sage">Product</span>
+            <span class="tag-sage">Promotional</span>
+          </div>
+          <p class="text-body-lg mb-4 reveal reveal-delay-1">
+            Every session starts with a conversation. I want to understand what you're trying to
+            say before I pick up a camera — whether that's a brand shoot, a portrait session, or
+            editorial work.
+          </p>
+          <p class="text-body reveal reveal-delay-2">
+            The studio comes to you. Whether it's the comfort of your home, a sun-drenched park,
+            or a location that holds meaning — I'll bring the eye, the equipment, and the vision.
+            You bring the place.
+          </p>
+        </div>
+
+        <!-- Portrait carousel -->
+        <div class="reveal reveal-delay-1">
+          <div id="portrait-carousel" class="relative rounded-xl overflow-hidden">
+            <div id="portrait-track" class="relative aspect-[3/4]">
+              {[
+                { src: '/images/photography/cover.jpg',    alt: 'Portrait' },
+                { src: '/images/photography/marley-1.jpg', alt: 'Portrait — Marley' },
+                { src: '/images/photography/marley-2.jpg', alt: 'Portrait — Marley' },
+                { src: '/images/photography/claire-1.jpg', alt: 'Portrait — Claire' },
+                { src: '/images/photography/portrait-5.jpg', alt: 'Portrait' },
+                { src: '/images/photography/portrait-6.jpg', alt: 'Pet portrait' },
+              ].map((photo, i) => (
+                <button
+                  class={`portrait-slide lightbox-trigger absolute inset-0 w-full h-full transition-opacity duration-700 cursor-zoom-in ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
+                  data-src={photo.src}
+                  data-alt={photo.alt}
+                  aria-label={`View full size: ${photo.alt}`}
+                >
+                  <img src={photo.src} alt={photo.alt} class="w-full h-full object-cover" />
+                </button>
+              ))}
+            </div>
+            <button id="portrait-prev" aria-label="Previous photo" class="absolute left-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8249;</button>
+            <button id="portrait-next" aria-label="Next photo"     class="absolute right-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8250;</button>
+          </div>
+          <div id="portrait-dots" class="flex justify-center gap-2 mt-3">
+            {[0,1,2,3,4,5].map(i => (
+              <button
+                class={`portrait-dot w-2 h-2 rounded-full transition-colors ${i === 0 ? 'bg-rose-deep' : 'bg-brown/20'}`}
+                data-index={i}
+                aria-label={`Go to photo ${i + 1}`}
+              ></button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery: Landscape -->
+  <section class="section-padded bg-sage-pale/40 border-y border-sage/20">
+    <div class="container-content">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+
+        <div>
+          <p class="text-label mb-3 reveal">Landscape</p>
+          <h2 class="font-display text-display-md text-brown ruled-heading mb-6 reveal reveal-delay-1">
+            Capturing Wisconsin's<br />Natural Beauty
+          </h2>
+          <p class="text-body-lg reveal reveal-delay-2">
+            Wisconsin has a quiet, unhurried beauty — golden fields, still water, and skies
+            that stretch wide. This collection grows with every season, every drive, and
+            every moment worth stopping for.
+          </p>
+        </div>
+
+        <!-- Landscape carousel -->
+        <div class="reveal reveal-delay-1">
+          <div id="landscape-carousel" class="relative rounded-xl overflow-hidden">
+            <div class="relative aspect-[4/3]">
+              {[
+                { src: '/images/photography/landscape-1.jpg', alt: 'Wisconsin landscape' },
+                { src: '/images/photography/landscape-2.jpg', alt: 'Wisconsin landscape' },
+                { src: '/images/photography/landscape-3.jpg', alt: 'Wisconsin landscape' },
+                { src: '/images/photography/landscape-4.jpg', alt: 'Wisconsin deer' },
+                { src: '/images/photography/landscape-5.jpg', alt: 'Wisconsin outdoors' },
+                { src: '/images/photography/landscape-6.jpg', alt: 'Blood moon over Wisconsin' },
+                { src: '/images/photography/landscape-7.jpg', alt: 'Wisconsin' },
+              ].map((photo, i) => (
+                <button
+                  class={`landscape-slide lightbox-trigger absolute inset-0 w-full h-full transition-opacity duration-700 cursor-zoom-in ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
+                  data-src={photo.src}
+                  data-alt={photo.alt}
+                  aria-label={`View full size: ${photo.alt}`}
+                >
+                  <img src={photo.src} alt={photo.alt} class="w-full h-full object-cover" />
+                </button>
+              ))}
+            </div>
+            <button id="landscape-prev" aria-label="Previous photo" class="absolute left-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8249;</button>
+            <button id="landscape-next" aria-label="Next photo"     class="absolute right-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8250;</button>
+          </div>
+          <div id="landscape-dots" class="flex justify-center gap-2 mt-3">
+            {[0,1,2,3,4,5,6].map(i => (
+              <button
+                class={`landscape-dot w-2 h-2 rounded-full transition-colors ${i === 0 ? 'bg-sage-dark' : 'bg-sage/30'}`}
+                data-index={i}
+                aria-label={`Go to photo ${i + 1}`}
+              ></button>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery: Photojournalism -->
+  <section class="section-padded bg-rose-pale/50 border-y border-rose-deep/10">
+    <div class="container-content">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+
+        <div>
+          <p class="text-label mb-3 reveal">Photojournalism</p>
+          <h2 class="font-display text-display-md text-brown ruled-heading mb-6 reveal reveal-delay-1">
+            On the Scene
+          </h2>
+          <p class="text-body-lg reveal reveal-delay-2">
+            Documenting moments as they happen — community events, local stories, and the
+            people behind them. Real moments, honest frames.
+          </p>
+        </div>
+
+        <!-- News carousel -->
+        <div class="reveal reveal-delay-1">
+          <div id="news-carousel" class="relative rounded-xl overflow-hidden">
+            <div class="relative aspect-[4/3]">
+              {[
+                { src: '/images/photography/news-1.jpg', alt: 'On the scene' },
+                { src: '/images/photography/news-2.jpg', alt: 'On the scene' },
+                { src: '/images/photography/news-3.jpg', alt: 'On the scene' },
+                { src: '/images/photography/news-4.jpg', alt: 'Rodeo' },
+              ].map((photo, i) => (
+                <button
+                  class={`news-slide lightbox-trigger absolute inset-0 w-full h-full transition-opacity duration-700 cursor-zoom-in ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
+                  data-src={photo.src}
+                  data-alt={photo.alt}
+                  aria-label={`View full size: ${photo.alt}`}
+                >
+                  <img src={photo.src} alt={photo.alt} class="w-full h-full object-cover" />
+                </button>
+              ))}
+            </div>
+            <button id="news-prev" aria-label="Previous photo" class="absolute left-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8249;</button>
+            <button id="news-next" aria-label="Next photo"     class="absolute right-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8250;</button>
+          </div>
+          <div id="news-dots" class="flex justify-center gap-2 mt-3">
+            {[0,1,2,3].map(i => (
+              <button
+                class={`news-dot w-2 h-2 rounded-full transition-colors ${i === 0 ? 'bg-rose-deep' : 'bg-rose-deep/20'}`}
+                data-index={i}
+                aria-label={`Go to photo ${i + 1}`}
+              ></button>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section-padded bg-cream-50 border-y border-cream-200">
+    <div class="container-content">
+      <h2 class="font-display text-display-md text-brown ruled-heading mb-6 reveal">Pricing</h2>
+      <p class="text-body-lg max-w-xl reveal reveal-delay-1">
+        Pricing varies based on the type of session, location, and deliverables.
+        Reach out and we'll find something that works for you.
+      </p>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href={CONTACT_URL}
+        class="btn-primary mt-8 inline-flex reveal reveal-delay-2"
+      >
+        Email for Pricing →
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-padded">
+    <div class="container-content text-center">
+      <h2 class="font-display text-display-md text-brown mb-6 reveal">Book a Session</h2>
+      <p class="text-body-lg max-w-md mx-auto mb-8 reveal reveal-delay-1">
+        Ready to work together? Let's talk about availability and creative vision.
+      </p>
+      <a target="_blank" rel="noopener noreferrer" href={CONTACT_URL} class="btn-primary reveal reveal-delay-2">
+        Get in Touch →
+      </a>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-brown-deep/90 backdrop-blur-sm p-4" role="dialog" aria-modal="true">
+    <button id="lightbox-close" class="absolute top-4 right-4 text-cream/70 hover:text-cream text-3xl leading-none" aria-label="Close">&times;</button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] rounded-xl shadow-card-hover object-contain" />
+  </div>
+
+</Page>
+
+<script>
+  function makeCarousel(
+    slideClass: string,
+    dotClass: string,
+    prevId: string,
+    nextId: string,
+    containerId: string,
+    activeDot: string,
+    inactiveDot: string,
+  ) {
+    const slides    = document.querySelectorAll<HTMLElement>(`.${slideClass}`);
+    const dots      = document.querySelectorAll<HTMLElement>(`.${dotClass}`);
+    const prev      = document.getElementById(prevId);
+    const next      = document.getElementById(nextId);
+    const container = document.getElementById(containerId);
+    if (!slides.length || !prev || !next || !container) return;
+
+    let current = 0;
+    let timer: ReturnType<typeof setInterval>;
+
+    function goTo(index: number) {
+      slides[current].classList.replace('opacity-100', 'opacity-0');
+      dots[current]?.classList.replace(activeDot, inactiveDot);
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.replace('opacity-0', 'opacity-100');
+      dots[current]?.classList.replace(inactiveDot, activeDot);
+    }
+
+    function start() { timer = setInterval(() => goTo(current + 1), 4500); }
+    function stop()  { clearInterval(timer); }
+
+    prev.addEventListener('click', (e) => { e.stopPropagation(); stop(); goTo(current - 1); start(); });
+    next.addEventListener('click', (e) => { e.stopPropagation(); stop(); goTo(current + 1); start(); });
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => { stop(); goTo(Number(dot.dataset.index)); start(); });
+    });
+    container.addEventListener('mouseenter', stop);
+    container.addEventListener('mouseleave', start);
+    start();
+  }
+
+  makeCarousel('portrait-slide',  'portrait-dot',  'portrait-prev',  'portrait-next',  'portrait-carousel',  'bg-rose-deep', 'bg-brown/20');
+  makeCarousel('landscape-slide', 'landscape-dot', 'landscape-prev', 'landscape-next', 'landscape-carousel', 'bg-sage-dark',  'bg-sage/30');
+  makeCarousel('news-slide',      'news-dot',      'news-prev',      'news-next',      'news-carousel',      'bg-rose-deep', 'bg-rose-deep/20');
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox')!;
+  const lbImg    = document.getElementById('lightbox-img') as HTMLImageElement;
+  const closeBtn = document.getElementById('lightbox-close')!;
+
+  function openLightbox(src: string, alt: string) {
+    lbImg.src = src;
+    lbImg.alt = alt;
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll<HTMLElement>('.lightbox-trigger').forEach(btn => {
+    btn.addEventListener('click', () => openLightbox(btn.dataset.src!, btn.dataset.alt!));
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+</script>

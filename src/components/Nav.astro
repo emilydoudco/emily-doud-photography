@@ -1,0 +1,97 @@
+---
+import { CONTACT_URL } from '../config/contact';
+
+const nav = [
+  { label: 'About',   href: '/about' },
+  { label: 'Gallery', href: '/#gallery' },
+];
+
+const current = Astro.url.pathname;
+---
+
+<header id="site-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" data-scrolled="false">
+  <div class="px-6 sm:px-12 lg:px-24">
+    <nav class="flex items-center justify-between h-16 lg:h-20">
+
+      <!-- Wordmark -->
+      <a href="/" class="flex items-center gap-3 group">
+        <img
+          src="/images/photography-logo.jpg"
+          alt="Emily Doud Photography"
+          class="w-9 h-9 rounded-full object-cover ring-1 ring-rose-deep/20 group-hover:ring-rose-deep/50 transition-all duration-300"
+        />
+        <span class="font-display text-xl font-light tracking-widest text-brown group-hover:text-rose-deep transition-colors duration-300">
+          Emily Doud <em class="not-italic font-normal text-rose-deep">Photography</em>
+        </span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="hidden lg:flex items-center gap-8">
+        {nav.map(({ label, href }) => (
+          <li>
+            <a
+              href={href}
+              class:list={[
+                'text-label transition-colors duration-200 hover:text-rose-deep',
+                current === href ? 'text-rose-deep' : 'text-brown-light',
+              ]}
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- CTA -->
+      <a target="_blank" rel="noopener noreferrer" href={CONTACT_URL} class="hidden lg:inline-flex btn-primary text-sm">
+        Book a Session
+      </a>
+
+      <!-- Mobile burger -->
+      <button
+        id="mobile-menu-btn"
+        aria-label="Toggle menu"
+        class="lg:hidden flex flex-col gap-1.5 p-2 text-brown"
+      >
+        <span class="block w-6 h-0.5 bg-current transition-all duration-300"></span>
+        <span class="block w-6 h-0.5 bg-current transition-all duration-300"></span>
+        <span class="block w-4 h-0.5 bg-current transition-all duration-300"></span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-cream-50 border-t border-cream-200 px-6 pb-6">
+    <ul class="flex flex-col gap-4 pt-4">
+      {nav.map(({ label, href }) => (
+        <li>
+          <a href={href} class="font-serif text-xl text-brown hover:text-rose-deep transition-colors">
+            {label}
+          </a>
+        </li>
+      ))}
+      <li class="pt-2">
+        <a target="_blank" rel="noopener noreferrer" href={CONTACT_URL} class="btn-primary w-full justify-center">
+          Book a Session
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<div class="h-16 lg:h-20" aria-hidden="true"></div>
+
+<script>
+  const nav = document.getElementById('site-nav')!;
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 32;
+    nav.setAttribute('data-scrolled', String(scrolled));
+    nav.classList.toggle('bg-cream/90', scrolled);
+    nav.classList.toggle('backdrop-blur-md', scrolled);
+    nav.classList.toggle('shadow-card', scrolled);
+  }, { passive: true });
+
+  const btn  = document.getElementById('mobile-menu-btn')!;
+  const menu = document.getElementById('mobile-menu')!;
+  btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+</script>

@@ -1,0 +1,61 @@
+---
+import { CONTACT_URL } from '../config/contact';
+const year = new Date().getFullYear();
+
+const links = [
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/emilydoud' },
+  { label: 'Email',    href: CONTACT_URL },
+  { label: 'Doud Co.', href: 'https://doudco.com' },
+];
+---
+
+<footer class="relative mt-section border-t border-cream-200 overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-br from-sage-pale/20 via-transparent to-rose-pale/10 pointer-events-none" aria-hidden="true"></div>
+
+  <div class="relative section-padded">
+    <div class="container-content">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12">
+
+        <!-- Brand col -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3 mb-3">
+            <img src="/images/photography-logo.jpg" alt="Emily Doud Photography" class="w-12 h-12 rounded-full object-cover ring-1 ring-rose-deep/20" />
+            <p class="font-display text-3xl font-light text-brown">
+              Emily Doud <em class="not-italic text-rose-deep">Photography</em>
+            </p>
+          </div>
+          <p class="text-body max-w-sm mt-3">
+            Warm, botanical, and intentional — portrait, lifestyle, and landscape photography in Wisconsin.
+          </p>
+        </div>
+
+        <!-- Links col -->
+        <nav aria-label="Footer navigation">
+          <p class="text-label mb-4">Connect</p>
+          <ul class="flex flex-col gap-2">
+            {links.map(({ label, href }) => (
+              <li>
+                <a
+                  href={href}
+                  class="font-sans text-brown-mid hover:text-rose-deep transition-colors duration-200 text-sm"
+                  {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+
+      <div class="border-t border-cream-200 pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+        <p class="text-xs text-brown-light font-sans">
+          &copy; {year} Emily Rose Doud &middot; Emily Doud Photography
+        </p>
+        <p class="text-xs text-brown-light font-sans italic">
+          Made with natural light and curiosity.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

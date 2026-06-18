@@ -1,0 +1,119 @@
+---
+import Page from '../layouts/Page.astro';
+import { CONTACT_URL } from '../config/contact';
+---
+
+<Page
+  title="About"
+  description="Meet Emily Rose Doud — photographer based in Wisconsin. Warm, botanical, and intentional work across portrait, lifestyle, landscape, and photojournalism."
+>
+
+  <!-- Hero -->
+  <section class="section-padded pb-0">
+    <div class="container-content">
+      <p class="text-label mb-4 reveal">About</p>
+      <h1 class="font-display text-display-lg text-brown mb-6 reveal reveal-delay-1">
+        Emily Rose Doud
+      </h1>
+      <p class="text-body-lg max-w-2xl reveal reveal-delay-2">
+        Photographer. Visual storyteller. Wisconsin-based and always chasing good light.
+      </p>
+    </div>
+  </section>
+
+  <!-- Bio + photo -->
+  <section class="section-padded">
+    <div class="container-content grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
+      <div class="lg:col-span-2 space-y-6">
+        <h2 class="font-display text-display-md text-brown ruled-heading reveal">My Story</h2>
+        <p class="text-body reveal reveal-delay-1">
+          I'm Emily — a photographer based in Wisconsin with a background in journalism,
+          communication, and storytelling. I came to photography through my love of documenting
+          real life: the honest moments, the details people overlook, the light that only stays
+          for a second.
+        </p>
+        <p class="text-body reveal reveal-delay-1">
+          My work has a warm, botanical quality — natural light, genuine expressions, and
+          intentional composition. Whether I'm shooting a senior portrait in a sun-drenched
+          field, a family in their backyard, or the rolling hills of Wisconsin at golden hour,
+          I bring the same care and attention to every frame.
+        </p>
+        <p class="text-body reveal reveal-delay-2">
+          Before diving deeper into photography as a profession, I spent years working in
+          fast-paced environments where communication and storytelling were central — from
+          reporting local news under tight deadlines to managing operations and connecting
+          with people from all walks of life. That background shapes how I approach every
+          session: with curiosity, presence, and a commitment to making you feel at ease.
+        </p>
+        <p class="text-body reveal reveal-delay-2">
+          The studio comes to you. I work on location — your home, a park, a meaningful
+          place — so your photos feel like <em>you</em>, not a backdrop.
+        </p>
+        <div class="pt-2 reveal reveal-delay-3">
+          <a target="_blank" rel="noopener noreferrer" href={CONTACT_URL} class="btn-primary">
+            Book a Session →
+          </a>
+        </div>
+      </div>
+
+      <!-- Photo -->
+      <div class="reveal reveal-delay-2">
+        <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-card">
+          <img
+            src="/images/emily.jpg"
+            alt="Emily Doud"
+            class="w-full h-full object-cover object-top"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What I believe in -->
+  <section class="section-padded bg-cream-50 border-y border-cream-200">
+    <div class="container-content">
+      <h2 class="font-display text-display-md text-brown ruled-heading mb-10 reveal">My Approach</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {[
+          {
+            label: 'Natural Light',
+            body: 'Soft, warm, and honest. Whenever possible I work with the available light to keep the feel of a moment intact.',
+            color: 'tag-sage',
+          },
+          {
+            label: 'On Location',
+            body: 'No studio backdrop. I come to you — your home, a favorite park, a place that means something — so the setting feels real.',
+            color: 'tag-rose',
+          },
+          {
+            label: 'Conversational',
+            body: 'Every shoot starts with a conversation. I want to know what you\'re hoping to capture before we pick a location or a date.',
+            color: 'tag-brown',
+          },
+        ].map((item, i) => (
+          <div class={`card p-6 reveal reveal-delay-${i + 1}`}>
+            <span class={`${item.color} mb-4 inline-block`}>{item.label}</span>
+            <p class="text-body">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialties -->
+  <section class="section-padded">
+    <div class="container-content">
+      <h2 class="font-display text-display-md text-brown ruled-heading mb-10 reveal">Specialties</h2>
+      <div class="flex flex-wrap gap-3 reveal reveal-delay-1">
+        {[
+          'Senior Portraits', 'Family Photography', 'Couples & Engagement',
+          'Professional Headshots', 'Brand Photography', 'Landscape', 'Photojournalism',
+          'Pet Photography', 'Maternity & Newborn', 'Events', 'Real Estate',
+        ].map(s => (
+          <span class="tag-brown text-sm">{s}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Page>

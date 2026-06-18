@@ -1,0 +1,98 @@
+---
+import Page from '../layouts/Page.astro';
+import { CONTACT_URL } from '../config/contact';
+---
+
+<Page
+  title="Book a Session"
+  description="Ready to book a photography session with Emily Doud? Reach out to discuss availability, pricing, and creative vision."
+>
+
+  <!-- Hero -->
+  <section class="section-padded pb-section-sm">
+    <div class="container-content max-w-3xl">
+      <p class="text-label mb-4 reveal">Let's Work Together</p>
+      <h1 class="font-display text-display-lg text-brown mb-6 reveal reveal-delay-1">
+        Book a Session
+      </h1>
+      <p class="text-body-lg reveal reveal-delay-2">
+        Ready to make something together? Send me a message and we'll figure out
+        the details — type of session, timeline, location, and pricing.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA block -->
+  <section class="section-padded pt-0">
+    <div class="container-content max-w-3xl">
+      <div class="card p-8 lg:p-12 reveal reveal-delay-1">
+        <h2 class="font-display text-display-md text-brown mb-4">Get in Touch</h2>
+        <p class="text-body mb-8">
+          Click below to open a pre-filled email. Fill in whatever details you have —
+          I'll get back to you within a day or two.
+        </p>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={CONTACT_URL}
+          class="btn-primary text-base"
+        >
+          Send an Email →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to include -->
+  <section class="section-padded bg-cream-50 border-y border-cream-200">
+    <div class="container-content max-w-3xl">
+      <h2 class="font-display text-display-md text-brown ruled-heading mb-10 reveal">What to Include</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {[
+          { label: 'Type of Session', body: 'Portraits, headshots, family, engagement, landscape, event — let me know what you have in mind.' },
+          { label: 'Timeline',        body: 'A rough date range or a specific date works. Weekends book fast, so the sooner the better.' },
+          { label: 'Location',        body: 'Have a place in mind? Share it. Not sure? I can suggest spots based on the look you want.' },
+          { label: 'Your Vision',     body: 'A mood, a reference photo, a vibe — any direction helps me show up prepared.' },
+        ].map((item, i) => (
+          <div class={`reveal reveal-delay-${i + 1}`}>
+            <p class="font-serif text-lg text-brown mb-2">{item.label}</p>
+            <p class="text-body">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-padded">
+    <div class="container-content max-w-3xl">
+      <h2 class="font-display text-display-md text-brown ruled-heading mb-10 reveal">Common Questions</h2>
+      <div class="space-y-8">
+        {[
+          {
+            q: 'How far in advance should I book?',
+            a: 'A few weeks is usually fine for individual sessions. Larger events and busy seasons (spring/fall) book faster — two months ahead is a safe buffer.',
+          },
+          {
+            q: 'Where do you shoot?',
+            a: 'On location anywhere in Wisconsin. I come to you — outdoor spaces, your home, or a spot with meaning to you.',
+          },
+          {
+            q: 'How long until I get my photos?',
+            a: 'Most sessions are delivered within one to two weeks. Larger events may take a bit longer.',
+          },
+          {
+            q: 'What if the weather is bad?',
+            a: 'We reschedule — no penalty. Wisconsin weather is unpredictable and I want your session to look its best.',
+          },
+        ].map((item, i) => (
+          <div class={`reveal reveal-delay-${i + 1}`}>
+            <p class="font-serif text-lg text-brown mb-2">{item.q}</p>
+            <p class="text-body">{item.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Page>
