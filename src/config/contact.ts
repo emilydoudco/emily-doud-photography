@@ -1,4 +1,4 @@
-const email = 'emilydoud14@gmail.com';
+const email = 'emily@emilydoudphotography.com';
 
 const body = [
   'Type of session:',
