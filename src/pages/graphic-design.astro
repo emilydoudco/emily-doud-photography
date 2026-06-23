@@ -1,0 +1,116 @@
+---
+import Page from '../layouts/Page.astro';
+import { CONTACT_URL } from '../config/contact';
+---
+
+<Page title="Graphic Design" description="Brand identity, print, and digital design by Emily Rose Doud — intentional, precise, and considered.">
+
+  <section class="section-padded pb-section-sm">
+    <div class="container-content">
+      <p class="text-label mb-4 reveal">Creative Work</p>
+      <h1 class="font-display text-display-lg text-brown mb-6 reveal reveal-delay-1">Graphic Design</h1>
+      <p class="text-body-lg max-w-2xl reveal reveal-delay-2">
+        Brand identity, print, and digital design. I bring the same careful eye I use behind
+        the lens to every layout and logo.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-padded">
+    <div class="container-content">
+      <div class="flex flex-wrap gap-2 mb-12 reveal">
+        <span class="tag-sage">Branding</span>
+        <span class="tag-sage">Print</span>
+        <span class="tag-sage">Digital</span>
+        <span class="tag-sage">Typography</span>
+      </div>
+      <p class="text-body-lg max-w-2xl mb-16 reveal reveal-delay-1">
+        Good design solves a problem and looks good doing it. I work from identity systems to
+        one-off print pieces — always starting with what the work needs to communicate, then
+        building from there.
+      </p>
+
+      <!-- Project: Wheelhouse Ad -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div class="reveal">
+          <p class="text-label mb-3">Print — Full Page Ad</p>
+          <h2 class="font-display text-display-md text-brown ruled-heading mb-6">Wheelhouse Pizza</h2>
+          <p class="text-body-lg mb-4 reveal reveal-delay-1">
+            A local pizza restaurant needed a full-page ad for a regional ski team's seasonal magazine —
+            distributed at ski shows throughout the summer. I designed the layout in Photoshop, incorporating
+            their event calendar and daily specials as the primary content.
+          </p>
+          <p class="text-body mb-6 reveal reveal-delay-2">
+            Photography included my own shots of food and waitstaff, along with two AI-generated images
+            created in Gemini: a pizza on skis and two young boys eating ice cream — both adding a
+            playful, seasonal feel that matched the magazine's audience.
+          </p>
+          <div class="flex flex-wrap gap-2 reveal reveal-delay-2">
+            <span class="tag-rose">Print Design</span>
+            <span class="tag-rose">Photoshop</span>
+            <span class="tag-rose">Photography</span>
+            <span class="tag-rose">AI Image Generation</span>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <img
+            src="/images/graphic-design/wheelhouse-ad.jpg"
+            alt="Wheelhouse Pizza full-page ski magazine ad"
+            class="w-full rounded-xl shadow-card object-cover"
+          />
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-cream-200 my-16"></div>
+
+      <!-- Project: Restaurant Calendar -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+        <div class="lg:order-2 reveal">
+          <p class="text-label mb-3">Print — Custom Calendar</p>
+          <h2 class="font-display text-display-md text-brown ruled-heading mb-6">A Local Restaurant Calendar</h2>
+          <p class="text-body-lg mb-4 reveal reveal-delay-1">
+            A custom 12-month calendar created as a Christmas gift for a local restaurant owner
+            and as a handout for regular customers. Designed entirely in Adobe Photoshop, each
+            month features a creative and humorous concept built around the restaurant's staff and culture.
+          </p>
+          <p class="text-body mb-6 reveal reveal-delay-2">
+            Concepts included employees dressed as a cherry garnish in a kiddie cocktail, an employee
+            dipped into Au Jus, a hot buttered rum doubling as a hot tub, a fly-swatter scenario,
+            and a friendly poker game featuring Don Julio 1942 and Blanton's — purely for the
+            owner's amusement, no bottles were harmed.
+          </p>
+          <div class="flex flex-wrap gap-2 reveal reveal-delay-2">
+            <span class="tag-rose">Print Design</span>
+            <span class="tag-rose">Photoshop</span>
+            <span class="tag-rose">Photo Compositing</span>
+            <span class="tag-rose">Custom Gift</span>
+          </div>
+        </div>
+
+        <div class="lg:order-1 reveal reveal-delay-1">
+          <img
+            src="/images/graphic-design/restaurant-calendar.jpg"
+            alt="Custom restaurant staff calendar"
+            class="w-full rounded-xl shadow-card object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section-padded bg-cream-50 border-t border-cream-200">
+    <div class="container-content text-center">
+      <h2 class="font-display text-display-md text-brown mb-6 reveal">Start a Project</h2>
+      <p class="text-body-lg max-w-md mx-auto mb-8 reveal reveal-delay-1">
+        Have a brand, print piece, or digital project in mind? Let's talk about what you need.
+      </p>
+      <a target="_blank" rel="noopener noreferrer" href={CONTACT_URL} class="btn-primary reveal reveal-delay-2">
+        Get in Touch →
+      </a>
+    </div>
+  </section>
+
+</Page>
