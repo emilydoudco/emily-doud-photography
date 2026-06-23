@@ -32,15 +32,13 @@ import { CONTACT_URL } from '../config/contact';
           </div>
         </div>
 
-        <!-- Hero image -->
-        <div class="reveal reveal-delay-2">
-          <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-card-hover">
-            <img
-              src="/images/photography/cover.jpg"
-              alt="Portrait photography by Emily Doud"
-              class="w-full h-full object-cover"
-            />
-          </div>
+        <!-- Hero logo -->
+        <div class="reveal reveal-delay-2 flex items-center justify-center">
+          <img
+            src="/images/logo-no-bg.jpg"
+            alt="Emily Doud Photography"
+            class="w-full max-w-md object-contain"
+          />
         </div>
       </div>
     </div>
@@ -95,6 +93,7 @@ import { CONTACT_URL } from '../config/contact';
               { title: 'Private events & celebrations', desc: 'Parties, anniversaries, reunions, and gatherings' },
               { title: 'Corporate events & conferences', desc: 'Professional coverage of your business events' },
               { title: 'Graduation & school events',    desc: 'Capturing the day for students and families' },
+              { title: 'Sporting events',               desc: 'On the sidelines and in the stands — documenting student athletes in their element, from the opening whistle to the final play' },
             ].map(item => (
               <li>
                 <p class="font-serif text-brown">{item.title}</p>
