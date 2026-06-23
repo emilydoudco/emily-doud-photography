@@ -144,6 +144,8 @@ import { CONTACT_URL } from '../config/contact';
                 { src: '/images/photography/claire-1.jpg', alt: 'Portrait — Claire' },
                 { src: '/images/photography/portrait-5.jpg', alt: 'Portrait' },
                 { src: '/images/photography/portrait-6.jpg', alt: 'Pet portrait' },
+                { src: '/images/photography/for-site-1.jpg', alt: 'Portrait' },
+                { src: '/images/photography/for-site-2.jpg', alt: 'Portrait' },
               ].map((photo, i) => (
                 <button
                   class={`portrait-slide lightbox-trigger absolute inset-0 w-full h-full transition-opacity duration-700 cursor-zoom-in ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
@@ -159,7 +161,7 @@ import { CONTACT_URL } from '../config/contact';
             <button id="portrait-next" aria-label="Next photo"     class="absolute right-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8250;</button>
           </div>
           <div id="portrait-dots" class="flex justify-center gap-2 mt-3">
-            {[0,1,2,3,4,5].map(i => (
+            {[0,1,2,3,4,5,6,7].map(i => (
               <button
                 class={`portrait-dot w-2 h-2 rounded-full transition-colors ${i === 0 ? 'bg-rose-deep' : 'bg-brown/20'}`}
                 data-index={i}
