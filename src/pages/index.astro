@@ -133,42 +133,77 @@ import { CONTACT_URL } from '../config/contact';
           </p>
         </div>
 
-        <!-- Portrait carousel -->
+        <!-- Portrait carousel of carousels -->
         <div class="reveal reveal-delay-1">
-          <div id="portrait-carousel" class="relative rounded-xl overflow-hidden">
-            <div id="portrait-track" class="relative aspect-[3/4]">
-              {[
-                { src: '/images/photography/cover.jpg',    alt: 'Portrait' },
-                { src: '/images/photography/marley-1.jpg', alt: 'Portrait — Marley' },
-                { src: '/images/photography/marley-2.jpg', alt: 'Portrait — Marley' },
-                { src: '/images/photography/claire-1.jpg', alt: 'Portrait — Claire' },
-                { src: '/images/photography/portrait-5.jpg', alt: 'Portrait' },
-                { src: '/images/photography/portrait-6.jpg', alt: 'Pet portrait' },
-                { src: '/images/photography/for-site-1.jpg', alt: 'Portrait' },
-                { src: '/images/photography/for-site-2.jpg', alt: 'Portrait' },
-              ].map((photo, i) => (
-                <button
-                  class={`portrait-slide lightbox-trigger absolute inset-0 w-full h-full transition-opacity duration-700 cursor-zoom-in ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
-                  data-src={photo.src}
-                  data-alt={photo.alt}
-                  aria-label={`View full size: ${photo.alt}`}
-                >
-                  <img src={photo.src} alt={photo.alt} class="w-full h-full object-cover" />
-                </button>
+
+          <!-- Gallery 1: Claire 1–6 -->
+          <div id="portrait-page-0" class="portrait-page">
+            <div id="carousel-0" class="relative rounded-xl overflow-hidden">
+              <div class="relative aspect-[3/4]">
+                {[
+                  { src: '/images/photography/claire-1.jpg', alt: 'Portrait — Claire' },
+                  { src: '/images/photography/claire-2.jpg', alt: 'Portrait — Claire' },
+                  { src: '/images/photography/claire-3.jpg', alt: 'Portrait — Claire' },
+                  { src: '/images/photography/claire-4.jpg', alt: 'Portrait — Claire' },
+                  { src: '/images/photography/claire-5.jpg', alt: 'Portrait — Claire' },
+                  { src: '/images/photography/claire-6.jpg', alt: 'Portrait — Claire' },
+                ].map((photo, i) => (
+                  <button
+                    class={`p0-slide lightbox-trigger absolute inset-0 w-full h-full transition-opacity duration-700 cursor-zoom-in ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
+                    data-src={photo.src} data-alt={photo.alt}
+                    aria-label={`View full size: ${photo.alt}`}
+                  >
+                    <img src={photo.src} alt={photo.alt} class="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+              <button id="carousel-0-prev" aria-label="Previous photo" class="absolute left-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8249;</button>
+              <button id="carousel-0-next" aria-label="Next photo"     class="absolute right-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8250;</button>
+            </div>
+            <div class="flex justify-center gap-2 mt-3">
+              {[0,1,2,3,4,5].map(i => (
+                <button class={`p0-dot w-2 h-2 rounded-full transition-colors ${i === 0 ? 'bg-rose-deep' : 'bg-brown/20'}`} data-index={i} aria-label={`Go to photo ${i + 1}`}></button>
               ))}
             </div>
-            <button id="portrait-prev" aria-label="Previous photo" class="absolute left-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8249;</button>
-            <button id="portrait-next" aria-label="Next photo"     class="absolute right-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8250;</button>
           </div>
-          <div id="portrait-dots" class="flex justify-center gap-2 mt-3">
-            {[0,1,2,3,4,5,6,7].map(i => (
-              <button
-                class={`portrait-dot w-2 h-2 rounded-full transition-colors ${i === 0 ? 'bg-rose-deep' : 'bg-brown/20'}`}
-                data-index={i}
-                aria-label={`Go to photo ${i + 1}`}
-              ></button>
-            ))}
+
+          <!-- Gallery 2: Claire 7, Cassie, Marley 1 & 2 edited -->
+          <div id="portrait-page-1" class="portrait-page hidden">
+            <div id="carousel-1" class="relative rounded-xl overflow-hidden">
+              <div class="relative aspect-[3/4]">
+                {[
+                  { src: '/images/photography/claire-7.jpg',       alt: 'Portrait — Claire' },
+                  { src: '/images/photography/cassie.jpg',          alt: 'Portrait — Cassie' },
+                  { src: '/images/photography/marley-1-edited.jpg', alt: 'Portrait — Marley' },
+                  { src: '/images/photography/marley-2-edited.jpg', alt: 'Portrait — Marley' },
+                ].map((photo, i) => (
+                  <button
+                    class={`p1-slide lightbox-trigger absolute inset-0 w-full h-full transition-opacity duration-700 cursor-zoom-in ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
+                    data-src={photo.src} data-alt={photo.alt}
+                    aria-label={`View full size: ${photo.alt}`}
+                  >
+                    <img src={photo.src} alt={photo.alt} class="w-full h-full object-cover" />
+                  </button>
+                ))}
+              </div>
+              <button id="carousel-1-prev" aria-label="Previous photo" class="absolute left-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8249;</button>
+              <button id="carousel-1-next" aria-label="Next photo"     class="absolute right-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8250;</button>
+            </div>
+            <div class="flex justify-center gap-2 mt-3">
+              {[0,1,2,3].map(i => (
+                <button class={`p1-dot w-2 h-2 rounded-full transition-colors ${i === 0 ? 'bg-rose-deep' : 'bg-brown/20'}`} data-index={i} aria-label={`Go to photo ${i + 1}`}></button>
+              ))}
+            </div>
           </div>
+
+          <!-- Gallery switcher -->
+          <div class="flex items-center justify-center gap-4 mt-5">
+            <button id="gallery-prev" class="text-brown-light hover:text-rose-deep transition-colors text-xl leading-none">&#8249;</button>
+            <button class="gallery-btn w-2 h-2 rounded-full bg-rose-deep transition-colors" data-page="0" aria-label="Gallery 1"></button>
+            <button class="gallery-btn w-2 h-2 rounded-full bg-brown/20 transition-colors" data-page="1" aria-label="Gallery 2"></button>
+            <button id="gallery-next" class="text-brown-light hover:text-rose-deep transition-colors text-xl leading-none">&#8250;</button>
+          </div>
+
         </div>
       </div>
     </div>
@@ -287,6 +322,50 @@ import { CONTACT_URL } from '../config/contact';
     </div>
   </section>
 
+  <!-- Pet Photos -->
+  <section class="section-padded bg-cream-50 border-y border-cream-200">
+    <div class="container-content">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div>
+          <p class="text-label mb-3 reveal">Furry Friends</p>
+          <h2 class="font-display text-display-md text-brown ruled-heading mb-6 reveal reveal-delay-1">
+            Pet Photos
+          </h2>
+          <p class="text-body-lg reveal reveal-delay-2">
+            Because they're family too. Capturing the personality and charm of your pets —
+            from sleepy afternoons to full-speed zoomies.
+          </p>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <div id="pet-carousel" class="relative rounded-xl overflow-hidden">
+            <div class="relative aspect-[3/4]">
+              {[
+                { src: '/images/photography/pup.jpg',   alt: 'Pet portrait' },
+                { src: '/images/photography/pup-1.jpg', alt: 'Pet portrait' },
+                { src: '/images/photography/pup-3.jpg', alt: 'Pet portrait' },
+              ].map((photo, i) => (
+                <button
+                  class={`pet-slide lightbox-trigger absolute inset-0 w-full h-full transition-opacity duration-700 cursor-zoom-in ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
+                  data-src={photo.src} data-alt={photo.alt}
+                  aria-label={`View full size: ${photo.alt}`}
+                >
+                  <img src={photo.src} alt={photo.alt} class="w-full h-full object-cover" />
+                </button>
+              ))}
+            </div>
+            <button id="pet-prev" aria-label="Previous photo" class="absolute left-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8249;</button>
+            <button id="pet-next" aria-label="Next photo"     class="absolute right-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8250;</button>
+          </div>
+          <div class="flex justify-center gap-2 mt-3">
+            {[0,1,2].map(i => (
+              <button class={`pet-dot w-2 h-2 rounded-full transition-colors ${i === 0 ? 'bg-rose-deep' : 'bg-brown/20'}`} data-index={i} aria-label={`Go to photo ${i + 1}`}></button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Pricing -->
   <section class="section-padded bg-cream-50 border-y border-cream-200">
     <div class="container-content">
@@ -368,9 +447,54 @@ import { CONTACT_URL } from '../config/contact';
     start();
   }
 
-  makeCarousel('portrait-slide',  'portrait-dot',  'portrait-prev',  'portrait-next',  'portrait-carousel',  'bg-rose-deep', 'bg-brown/20');
+  // Portrait gallery of carousels
+  function makePortraitCarousel(pageIndex: number) {
+    const slides    = document.querySelectorAll<HTMLElement>(`.p${pageIndex}-slide`);
+    const dots      = document.querySelectorAll<HTMLElement>(`.p${pageIndex}-dot`);
+    const prev      = document.getElementById(`carousel-${pageIndex}-prev`)!;
+    const next      = document.getElementById(`carousel-${pageIndex}-next`)!;
+    const container = document.getElementById(`carousel-${pageIndex}`)!;
+    let current = 0;
+    let timer: ReturnType<typeof setInterval>;
+    function goTo(index: number) {
+      slides[current].classList.replace('opacity-100', 'opacity-0');
+      dots[current]?.classList.replace('bg-rose-deep', 'bg-brown/20');
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.replace('opacity-0', 'opacity-100');
+      dots[current]?.classList.replace('bg-brown/20', 'bg-rose-deep');
+    }
+    function start() { timer = setInterval(() => goTo(current + 1), 4500); }
+    function stop()  { clearInterval(timer); }
+    prev.addEventListener('click', (e) => { e.stopPropagation(); stop(); goTo(current - 1); start(); });
+    next.addEventListener('click', (e) => { e.stopPropagation(); stop(); goTo(current + 1); start(); });
+    dots.forEach(dot => dot.addEventListener('click', () => { stop(); goTo(Number(dot.dataset.index)); start(); }));
+    container.addEventListener('mouseenter', stop);
+    container.addEventListener('mouseleave', start);
+    return { start, stop };
+  }
+
+  const portraitCarousels = [makePortraitCarousel(0), makePortraitCarousel(1)];
+  const portraitPages     = [document.getElementById('portrait-page-0')!, document.getElementById('portrait-page-1')!];
+  const galleryBtns       = document.querySelectorAll<HTMLElement>('.gallery-btn');
+  let activePage = 0;
+  portraitCarousels[0].start();
+
+  function switchPage(index: number) {
+    portraitCarousels[activePage].stop();
+    portraitPages[activePage].classList.add('hidden');
+    galleryBtns[activePage].classList.replace('bg-rose-deep', 'bg-brown/20');
+    activePage = (index + portraitPages.length) % portraitPages.length;
+    portraitPages[activePage].classList.remove('hidden');
+    galleryBtns[activePage].classList.replace('bg-brown/20', 'bg-rose-deep');
+    portraitCarousels[activePage].start();
+  }
+  document.getElementById('gallery-prev')!.addEventListener('click', () => switchPage(activePage - 1));
+  document.getElementById('gallery-next')!.addEventListener('click', () => switchPage(activePage + 1));
+  galleryBtns.forEach(btn => btn.addEventListener('click', () => switchPage(Number(btn.dataset.page))));
+
   makeCarousel('landscape-slide', 'landscape-dot', 'landscape-prev', 'landscape-next', 'landscape-carousel', 'bg-sage-dark',  'bg-sage/30');
   makeCarousel('news-slide',      'news-dot',      'news-prev',      'news-next',      'news-carousel',      'bg-rose-deep', 'bg-rose-deep/20');
+  makeCarousel('pet-slide',       'pet-dot',       'pet-prev',       'pet-next',       'pet-carousel',       'bg-rose-deep', 'bg-brown/20');
 
   // Lightbox
   const lightbox = document.getElementById('lightbox')!;
