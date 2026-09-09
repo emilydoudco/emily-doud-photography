@@ -367,6 +367,53 @@ import { CONTACT_URL } from '../config/contact';
     </div>
   </section>
 
+  <!-- Family Portraits -->
+  <section class="section-padded bg-sage-pale/40 border-y border-sage/20">
+    <div class="container-content">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div>
+          <p class="text-label mb-3 reveal">Family</p>
+          <h2 class="font-display text-display-md text-brown ruled-heading mb-6 reveal reveal-delay-1">
+            Family Portraits
+          </h2>
+          <p class="text-body-lg reveal reveal-delay-2">
+            Real families, real moments. Sessions that feel less like a photoshoot and more
+            like an afternoon together — and the images to prove it.
+          </p>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <div id="family-carousel" class="relative rounded-xl overflow-hidden">
+            <div class="relative aspect-[3/4]">
+              {[
+                { src: '/images/photography/family-4.jpg',  alt: 'Family portrait' },
+                { src: '/images/photography/family-5.jpg',  alt: 'Family portrait' },
+                { src: '/images/photography/family-7.jpg',  alt: 'Family portrait' },
+                { src: '/images/photography/family-8.jpg',  alt: 'Family portrait' },
+                { src: '/images/photography/family-9.jpg',  alt: 'Family portrait' },
+                { src: '/images/photography/family-10.jpg', alt: 'Family portrait' },
+              ].map((photo, i) => (
+                <button
+                  class={`family-slide lightbox-trigger absolute inset-0 w-full h-full transition-opacity duration-700 cursor-zoom-in ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
+                  data-src={photo.src} data-alt={photo.alt}
+                  aria-label={`View full size: ${photo.alt}`}
+                >
+                  <img src={photo.src} alt={photo.alt} class="w-full h-full object-cover" />
+                </button>
+              ))}
+            </div>
+            <button id="family-prev" aria-label="Previous photo" class="absolute left-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8249;</button>
+            <button id="family-next" aria-label="Next photo"     class="absolute right-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8250;</button>
+          </div>
+          <div class="flex justify-center gap-2 mt-3">
+            {[0,1,2,3,4,5].map(i => (
+              <button class={`family-dot w-2 h-2 rounded-full transition-colors ${i === 0 ? 'bg-sage-dark' : 'bg-sage/30'}`} data-index={i} aria-label={`Go to photo ${i + 1}`}></button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Pricing -->
   <section class="section-padded bg-cream-50 border-y border-cream-200">
     <div class="container-content">
@@ -496,6 +543,7 @@ import { CONTACT_URL } from '../config/contact';
   makeCarousel('landscape-slide', 'landscape-dot', 'landscape-prev', 'landscape-next', 'landscape-carousel', 'bg-sage-dark',  'bg-sage/30');
   makeCarousel('news-slide',      'news-dot',      'news-prev',      'news-next',      'news-carousel',      'bg-rose-deep', 'bg-rose-deep/20');
   makeCarousel('pet-slide',       'pet-dot',       'pet-prev',       'pet-next',       'pet-carousel',       'bg-rose-deep', 'bg-brown/20');
+  makeCarousel('family-slide',    'family-dot',    'family-prev',    'family-next',    'family-carousel',    'bg-sage-dark',  'bg-sage/30');
 
   // Lightbox
   const lightbox = document.getElementById('lightbox')!;
