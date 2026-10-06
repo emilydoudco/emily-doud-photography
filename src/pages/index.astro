@@ -208,7 +208,7 @@ import { CONTACT_URL } from '../config/contact';
     </div>
   </section>
 
-  <!-- Gallery: Landscape -->
+  <!-- Gallery: The Wisco Landscape -->
   <section class="section-padded bg-sage-pale/40 border-y border-sage/20">
     <div class="container-content">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
@@ -216,7 +216,7 @@ import { CONTACT_URL } from '../config/contact';
         <div>
           <p class="text-label mb-3 reveal">Landscape</p>
           <h2 class="font-display text-display-md text-brown ruled-heading mb-6 reveal reveal-delay-1">
-            Capturing Wisconsin's<br />Natural Beauty
+            The Wisco Landscape
           </h2>
           <p class="text-body-lg reveal reveal-delay-2">
             Wisconsin has a quiet, unhurried beauty — golden fields, still water, and skies
@@ -230,14 +230,14 @@ import { CONTACT_URL } from '../config/contact';
           <div id="landscape-carousel" class="relative rounded-xl overflow-hidden">
             <div class="relative aspect-[4/3]">
               {[
-                { src: '/images/photography/landscape-1.jpg', alt: 'Wisconsin landscape' },
-                { src: '/images/photography/landscape-2.jpg', alt: 'Wisconsin landscape' },
-                { src: '/images/photography/landscape-3.jpg', alt: 'Wisconsin landscape' },
-                { src: '/images/photography/landscape-4.jpg', alt: 'Wisconsin deer' },
-                { src: '/images/photography/landscape-5.jpg', alt: 'Wisconsin outdoors' },
-                { src: '/images/photography/landscape-6.jpg', alt: 'Blood moon over Wisconsin' },
-                { src: '/images/photography/landscape-7.jpg', alt: 'Wisconsin' },
-                { src: '/images/photography/landscape-bird.jpg', alt: 'Wisconsin bird' },
+                { src: '/images/photography/landscape-1.jpg',            alt: 'Wisconsin landscape' },
+                { src: '/images/photography/landscape-2.jpg',            alt: 'Wisconsin landscape' },
+                { src: '/images/photography/landscape-3.jpg',            alt: 'Wisconsin landscape' },
+                { src: '/images/photography/landscape-5.jpg',            alt: 'Wisconsin outdoors' },
+                { src: '/images/photography/landscape-6.jpg',            alt: 'Blood moon over Wisconsin' },
+                { src: '/images/photography/landscape-7.jpg',            alt: 'Wisconsin' },
+                { src: '/images/photography/landscape-yellow-flower.jpg', alt: 'Yellow flower' },
+                { src: '/images/photography/landscape-eaa-bridge.jpg',   alt: 'EAA Bridge' },
               ].map((photo, i) => (
                 <button
                   class={`landscape-slide lightbox-trigger absolute inset-0 w-full h-full transition-opacity duration-700 cursor-zoom-in ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
@@ -256,6 +256,62 @@ import { CONTACT_URL } from '../config/contact';
             {[0,1,2,3,4,5,6,7].map(i => (
               <button
                 class={`landscape-dot w-2 h-2 rounded-full transition-colors ${i === 0 ? 'bg-sage-dark' : 'bg-sage/30'}`}
+                data-index={i}
+                aria-label={`Go to photo ${i + 1}`}
+              ></button>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery: Among the Wild -->
+  <section class="section-padded bg-brown/5 border-y border-brown/10">
+    <div class="container-content">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+
+        <div>
+          <p class="text-label mb-3 reveal">Wildlife</p>
+          <h2 class="font-display text-display-md text-brown ruled-heading mb-6 reveal reveal-delay-1">
+            Among the Wild
+          </h2>
+          <p class="text-body-lg reveal reveal-delay-2">
+            Wisconsin's wild residents — patient, fleeting, and completely unbothered by the
+            camera. Every shot is a reminder that the best subjects don't take direction.
+          </p>
+        </div>
+
+        <!-- Wildlife carousel -->
+        <div class="reveal reveal-delay-1">
+          <div id="wild-carousel" class="relative rounded-xl overflow-hidden">
+            <div class="relative aspect-[3/4]">
+              {[
+                { src: '/images/photography/wildlife-eagle.jpg', alt: 'Eagle in Wisconsin' },
+                { src: '/images/photography/wildlife-crane.jpg', alt: 'Crane in Wisconsin', pos: '35% center' },
+                { src: '/images/photography/wildlife-woody.jpg', alt: 'Woodpecker in Wisconsin' },
+                { src: '/images/photography/wildlife-goose.jpg', alt: 'Goose takeoff in Wisconsin' },
+                { src: '/images/photography/landscape-4.jpg',    alt: 'Wisconsin deer' },
+                { src: '/images/photography/landscape-bird.jpg', alt: 'Wisconsin bird' },
+              ].map((photo, i) => (
+                <button
+                  class={`wild-slide lightbox-trigger absolute inset-0 w-full h-full transition-opacity duration-700 cursor-zoom-in ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
+                  data-src={photo.src}
+                  data-alt={photo.alt}
+                  aria-label={`View full size: ${photo.alt}`}
+                >
+                  <img src={photo.src} alt={photo.alt} class="w-full h-full object-cover" style={photo.pos ? `object-position:${photo.pos}` : undefined} />
+                </button>
+              ))}
+            </div>
+            <button id="wild-prev" aria-label="Previous photo" class="absolute left-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8249;</button>
+            <button id="wild-next" aria-label="Next photo"     class="absolute right-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8250;</button>
+          </div>
+          <div class="flex justify-center gap-2 mt-3">
+            {[0,1,2,3,4,5].map(i => (
+              <button
+                class={`wild-dot w-2 h-2 rounded-full transition-colors ${i === 0 ? 'bg-brown' : 'bg-brown/20'}`}
                 data-index={i}
                 aria-label={`Go to photo ${i + 1}`}
               ></button>
@@ -293,6 +349,7 @@ import { CONTACT_URL } from '../config/contact';
                 { src: '/images/photography/news-3.jpg', alt: 'On the scene' },
                 { src: '/images/photography/news-4.jpg', alt: 'Rodeo' },
                 { src: '/images/photography/lunar-eclipse.jpg', alt: 'Lunar eclipse' },
+                { src: '/images/photography/news-snodeo-1.jpg', alt: 'Manawa Snodeo' },
               ].map((photo, i) => (
                 <button
                   class={`news-slide lightbox-trigger absolute inset-0 w-full h-full transition-opacity duration-700 cursor-zoom-in ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
@@ -308,7 +365,7 @@ import { CONTACT_URL } from '../config/contact';
             <button id="news-next" aria-label="Next photo"     class="absolute right-2 top-1/2 -translate-y-1/2 bg-cream/80 hover:bg-cream text-brown rounded-full w-9 h-9 flex items-center justify-center shadow transition-colors">&#8250;</button>
           </div>
           <div id="news-dots" class="flex justify-center gap-2 mt-3">
-            {[0,1,2,3,4].map(i => (
+            {[0,1,2,3,4,5].map(i => (
               <button
                 class={`news-dot w-2 h-2 rounded-full transition-colors ${i === 0 ? 'bg-rose-deep' : 'bg-rose-deep/20'}`}
                 data-index={i}
@@ -540,7 +597,8 @@ import { CONTACT_URL } from '../config/contact';
   document.getElementById('gallery-next')!.addEventListener('click', () => switchPage(activePage + 1));
   galleryBtns.forEach(btn => btn.addEventListener('click', () => switchPage(Number(btn.dataset.page))));
 
-  makeCarousel('landscape-slide', 'landscape-dot', 'landscape-prev', 'landscape-next', 'landscape-carousel', 'bg-sage-dark',  'bg-sage/30');
+  makeCarousel('landscape-slide', 'landscape-dot', 'landscape-prev', 'landscape-next', 'landscape-carousel', 'bg-sage-dark', 'bg-sage/30');
+  makeCarousel('wild-slide',      'wild-dot',      'wild-prev',      'wild-next',      'wild-carousel',      'bg-brown',     'bg-brown/20');
   makeCarousel('news-slide',      'news-dot',      'news-prev',      'news-next',      'news-carousel',      'bg-rose-deep', 'bg-rose-deep/20');
   makeCarousel('pet-slide',       'pet-dot',       'pet-prev',       'pet-next',       'pet-carousel',       'bg-rose-deep', 'bg-brown/20');
   makeCarousel('family-slide',    'family-dot',    'family-prev',    'family-next',    'family-carousel',    'bg-sage-dark',  'bg-sage/30');
